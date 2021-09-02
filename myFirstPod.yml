@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-        name: myapp-pod
+        name: helloworld
         labels:
-                app: myapp
-                type: front-end
+                app: helloworld 
+                type: back-end
                 dev: hector
 spec:
         containers:
-                - name: nginx-container
-                  image: nginx
+                - name: hello-world
+                  image: hello-world
