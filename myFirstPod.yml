@@ -3,7 +3,7 @@ kind: Pod
 metadata:
         name: helloworld
         labels:
-                app: helloworld 
+                app: test 
                 type: back-end
                 dev: hector
 spec:
