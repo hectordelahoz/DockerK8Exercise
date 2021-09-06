@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rc-nginx
+  labels:
+    app: rc-nginx
+    type: back-end
+    stage: development
+    developer: hector
+spec:
+  template:
+    metadata:
+      name: pod-nginx
+      labels:
+        app: pod-nginx
+        type: backend
+        stage: development
+        author: hector2
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+  replicas: 3
+  selector: 
+    matchLabels:
+      type: backend

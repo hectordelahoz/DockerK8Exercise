@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hello-world-rc
+  labels:
+    app: helloworld-rc
+    type: script
+    stage: test
+    developer: hector_tester
+spec:
+  template:
+    metadata:
+      name: hello-world-pod
+      labels:
+        app: helloworld-pod
+        type: script
+        stage: test
+        developer: hector_tester
+    spec:
+      containers:
+        - name: hello-world
+          image: hello-world
+  replicas: 3
+  selector:
+    matchLabels:
+      type: script
